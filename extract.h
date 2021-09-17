@@ -102,6 +102,7 @@ void filesinit(char* f_name)
 {
     int i,j,diffchar;
     char code[64];
+    char numread[4];
     char character;
     bool bit;
     node* n;
@@ -114,14 +115,15 @@ void filesinit(char* f_name)
     diffchar=fgetc(fr);
     fgetc(fr);
     */
-    printf("%d %d\n",numofchar,diffchar);
+    printf("%d\n%d\n",numofchar,diffchar);
 
     for (i=0;i<diffchar;i++)
     {
         //character=fgetc(fr);
-        fscanf(fr,"%d %s\n",&character,code);
+        fscanf(fr,"%s %s\n",numread,code);
+        character = atoi(numread);
         printf("%c %s\n",character,code);
-        //code[strlen(code)]='\0'ß
+        //code[strlen(code)]='\0'ï¿½
         n=root;
         j=0;
         while (code[j]!='\0')
